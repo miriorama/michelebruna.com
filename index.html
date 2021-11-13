@@ -1,0 +1,277 @@
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Michele Bruna</title>
+
+    <link rel="icon" type="image/png" href="img/favicon.png" >
+    <link rel="apple-touch-icon" type="image/png" href="img/favicon.png" />
+
+    <meta name="author" content="miriorama.com"/>
+    <meta name="description" content="Michele Bruna" />
+
+    <meta property="og:title" content="Michele Bruna" />
+    <meta property="og:site_name" content="Michele Bruna" />
+    <meta property="og:description" content="Michele Bruna" />
+    <meta property="og:image" content="" />
+    <meta property="og:type" content="website" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;900&family=Sora:wght@400;700&family=Yeseva+One&display=swap" rel="stylesheet">
+    <link href="css/style.css?v=1" rel="stylesheet"/>
+</head>
+<body>
+
+    <div class="column-container">
+        <div class="column column-header">
+            <div class="column-text">
+                Nella natura incontaminata agiscono molti più fattori a dichiarare lo stato dell’opera.
+                <!-- <img src="img/icons/arrow-right.svg" alt=""> -->
+            </div>
+            <div class="column-title">
+                <img src="/img/firma.png" alt="Michele Bruna">
+            </div>
+            <div class="column-social">
+                <a onclick="BRUNA.showWork('bio', 'exhibition');">Bio</a> /
+                <a href="https://www.facebook.com/MicheleBrunaArtista/">Facebook</a> /
+                <a href="https://www.instagram.com/michele_bruna_artista/">Instagram</a> /
+                <a href="tel:+393335921411">Tel</a> /
+                <a href="mailto:info@michelebruna.com">Email</a>
+                <!--<img src="img/icons/facebook.svg" alt="">
+                <img src="img/icons/instagram.svg" alt="">
+                <img src="img/icons/whatsapp.svg" alt="">
+                <a href="mailto:info@michelebruna.com">
+                <img src="img/icons/email.svg" alt="">-->
+            </a>
+            </div>
+        </div>
+        <div class="column-works">
+            <div class="column column--work" onclick="BRUNA.showWork('ortus-obitus');">
+                <div class="column-bkg">
+                    <div class="column-img" style="background-image: url(img/works/ortus-obitus/cover.jpg);"></div>
+                </div>
+                <div class="column-letter">O</div>
+                <div class="column-title">Ortus<br>obitus</div>
+                <div class="column-icon">
+                    <img src="img/icons/arrow-right.svg" alt="">
+                </div>
+            </div>
+            <div class="column column--work" onclick="BRUNA.showWork('f-rammenti');">
+                <div class="column-bkg">
+                    <div class="column-img" style="background-image: url(img/works/f-rammenti/cover-old.jpg); background-position: center right;"></div>
+                </div>
+                <div class="column-letter">F</div>
+                <div class="column-title">f-rammenti</div>
+                <div class="column-icon">
+                    <img src="img/icons/arrow-right.svg" alt="">
+                </div>
+            </div>
+            <div class="column column--work"onclick="BRUNA.showWork('s-carti', 'exhibition');">
+                <div class="column-bkg">
+                    <div class="column-img" style="background-image: url(img/works/s-carti/cover.jpg);"></div>
+                </div>
+                <div class="column-letter">S</div>
+                <div class="column-title">s-carti</div>
+                <div class="column-icon">
+                    <img src="img/icons/arrow-right.svg" alt="">
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div id="ortus-obitus" class="work" data-background-color="#f6efdf" data-color="#655445" hidden>
+        <div class="work-data">
+            <div class="work-close" onclick="BRUNA.closeWork()">✕</div>
+            <div class="work-title">Ortus obitus</div>
+            <div class="switch">
+                <div data-switch="method" class="selected" onclick="BRUNA.scrollTo(BRUNA.METHOD);">method</div>
+                <div data-switch="exhibition" class="" onclick="BRUNA.scrollTo(BRUNA.EXHIBITION);">exhibition</div>
+            </div>
+            <div class="work-subtitle"></div>
+            <div class="work-description">
+                <p>Il processo ha origine dalla nascita del supporto (ortŭs), carta fabbricata artigianalmente dall’artista, che diventa soggetto dell’opera. </p>
+                <p>La carta viene posta a contatto con la terra creando una sorta di meccanismo simbiotico in cui le sostanze che la carta rilascia sulla terra la fertilizzano, mentre la stessa modifica l’impasto cartaceo, come per mano dell’artista. </p>
+                <p>Successivamente avviene la contaminazione pittorica, sino ad arrivare alla morte dell’opera (obitus), fine di un processo creativo, ovvero la trasposizione verticale della carta su supporto. </p>
+            </div>
+            <div onclick="BRUNA.scrollDown(this);" class="work-arrow-down bounce">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-down" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M8 1a.5.5 0 0 1 .5.5v11.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L7.5 13.293V1.5A.5.5 0 0 1 8 1z"/>
+                </svg>
+            </div>
+        </div>
+
+        <div class="work-gallery">
+            <div class="gallery gallery-method">
+                <img class="gallery-item-bkg" src="img/works/ortus-obitus/1.jpg" />
+                <img class="gallery-item-bkg" src="img/works/ortus-obitus/2.jpg" />
+                <img class="gallery-item-bkg" src="img/works/ortus-obitus/3.jpg" />
+                <img class="gallery-item-bkg last-method" src="img/works/ortus-obitus/5.jpg" />
+                <div class="gallery-separator"></div>
+                <div class="piece first-exhibition"><img class="gallery-item-bkg" src="img/works/ortus-obitus/item-1.png" /> </div>
+                <div class="piece"><img class="gallery-item-bkg" src="img/works/ortus-obitus/item-2.png" />        </div>
+                <div class="piece"><img class="gallery-item-bkg" src="img/works/ortus-obitus/item-3.png" />       </div>
+                <div class="piece"><img class="gallery-item-bkg" src="img/works/ortus-obitus/item-4.png" /></div>
+                <div class="piece"><img class="gallery-item-bkg" src="img/works/ortus-obitus/item-5.png" /></div>
+            </div>
+        </div>
+    </div>
+
+    <div id="f-rammenti" class="work" data-background-color="#ececec" data-color="#424047" hidden>
+        <div class="work-data">
+            <div class="work-close" onclick="BRUNA.closeWork()">✕</div>
+            <div class="work-title">f-rammenti</div>
+            <div class="switch">
+                <div data-switch="method" class="selected" onclick="BRUNA.scrollTo(BRUNA.METHOD);">method</div>
+                <div data-switch="exhibition" class="" onclick="BRUNA.scrollTo(BRUNA.EXHIBITION);">exhibition</div>
+            </div>
+            <div class="work-subtitle"></div>
+            <div class="work-description">
+                <p>La creazione dell’opera inizia con la realizzazione <i>site-specific</i> di fogli di carta artigianale disposti ad asciugare a contatto di tronchi di <b>alberi di castagno</b>.</p>
+                <p>I fogli asciugati vengono quindi distaccati dalla corteccia e fissati per preservarne la forma ottenuta. <br></p>
+                <p>I <b>calchi di carta</b> raccontano parti di un vissuto naturale irripetibile di cui sono stati essi stessi parte integrante nel momento della loro realizzazione, diventando così una sorta di corteccia della corteccia.<br></p>
+                <p>Successivamente i frammenti asciugati ed esportati dalla matrice originaria assumono la caratteristica di opere in quanto stampe/calchi rappresentativi di una <b>matrice vivente o vissuta</b>.</p>
+
+            </div>
+            <div onclick="BRUNA.scrollDown(this);" class="work-arrow-down bounce">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-down" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M8 1a.5.5 0 0 1 .5.5v11.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L7.5 13.293V1.5A.5.5 0 0 1 8 1z"/>
+                </svg>
+            </div>
+        </div>
+
+        <div class="work-gallery">
+
+
+            <div class="gallery gallery-method">
+                <img class="gallery-item-bkg" src="img/works/f-rammenti/1.jpg" />
+                <img class="gallery-item-bkg" src="img/works/f-rammenti/2.jpg" />
+                <img class="gallery-item-bkg" src="img/works/f-rammenti/3.jpg" />
+                <img class="gallery-item-bkg" src="img/works/f-rammenti/4.jpg" />
+                <img class="gallery-item-bkg" src="img/works/f-rammenti/5.jpg" />
+                <img class="gallery-item-bkg" src="img/works/f-rammenti/6.jpg" />
+                <div class="gallery-separator"></div>
+                <div class="piece"><img class="gallery-item-bkg" src="img/works/f-rammenti/item-1.jpg" /> </div>
+                <div class="piece"><img class="gallery-item-bkg" src="img/works/f-rammenti/item-2.jpg" />        </div>
+                <div class="piece"><img class="gallery-item-bkg" src="img/works/f-rammenti/item-3.jpg" />       </div>
+                <div class="piece"><img class="gallery-item-bkg" src="img/works/f-rammenti/item-4.jpg" /></div>
+            </div>
+            <div class="gallery gallery-exhibition" hidden>
+            </div>
+        </div>
+    </div>
+
+    <div id="s-carti" class="work" data-background-color="#f4fafa" data-color="#3c5c58" hidden>
+        <div class="work-data">
+            <div class="work-close" onclick="BRUNA.closeWork()">✕</div>
+            <div class="work-title">S-carti</div>
+            <div class="work-subtitle"></div>
+            <div class="work-description">
+                Questo progetto nasce dalla volontà di ridare valore estetico e simbolico ad alcuni resti accumulati durante gi anni nell’atelier dell’artista.
+                Sono ritagli di tela cuciti ed intelaiati su telai fabbricati con legno di recupero.
+                Alcuni supporti ottenuti sono in seguito cosparsi di polpa di carta riciclata prodotta dall’artista. Questi lavori acquisiscono un valore particolare non solamente perchè composti di materiali riciclati ma anche perchè raccontano la storia di altre opere che grazie a questi scarti han potuto divenire opere finite.
+            </div>
+            <div onclick="BRUNA.scrollDown(this);" class="work-arrow-down bounce">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-down" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M8 1a.5.5 0 0 1 .5.5v11.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L7.5 13.293V1.5A.5.5 0 0 1 8 1z"/>
+                </svg>
+            </div>
+        </div>
+
+        <div class="work-gallery">
+            <div class="gallery gallery-exhibition">
+                <div class="piece"><img class="gallery-item-bkg" src="img/works/s-carti/item-1.png" /></div>
+                <div class="piece"><img class="gallery-item-bkg" src="img/works/s-carti/item-2.png" /></div>
+                <div class="piece"><img class="gallery-item-bkg" src="img/works/s-carti/item-3.png" /></div>
+                <div class="piece"><img class="gallery-item-bkg" src="img/works/s-carti/item-4.png" /></div>
+                <div class="piece"><img class="gallery-item-bkg" src="img/works/s-carti/item-5.png" /></div>
+            </div>
+        </div>
+    </div>
+
+    <div id="bio" class="work" data-background-color="#F4F1DE" data-color="#3d405b" hidden>
+        <div class="work-data">
+            <div class="work-close" onclick="BRUNA.closeWork()">✕</div>
+            <div class="work-title">Biografia</div>
+            <div class="work-subtitle"></div>
+            <div class="work-description">
+                Michele Bruna (1990) Cuneo.
+            </div>
+            <div onclick="BRUNA.scrollDown(this);" class="work-arrow-down bounce">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-down" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M8 1a.5.5 0 0 1 .5.5v11.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L7.5 13.293V1.5A.5.5 0 0 1 8 1z"/>
+                </svg>
+            </div>
+        </div>
+
+        <div class="work-gallery">
+            <div class="work-bio gallery">
+                <h4>FORMAZIONE</h4>
+                <p>
+                    Diplomato nel 2009 presso il liceo artistico “Ego Bianchi” di Cuneo.
+                    Nel 2013 consegue il diploma di I° livello e nel 2015 di II° livello in Pittura presso l'Accademia di Belle Arti di Brera a Milano, frequentando il corso di Italo Bressan.
+                    Attualmente collabora con la galleria Kalpa Art Living di Volterra.
+                </p>
+                <p>
+                    La sua ricerca attuale ha come intento quello di raccontare le possibilità artistiche di narrazione della vita dell'opera d’arte nella sua interezza.
+                    Dalla genesi al processo, sino alla loro morte, l’artista assembla e impasta materiali pittorici e scultorei, sempre cercando un risultato formale che li accolga e li contempli contemporaneamente. Ogni espediente materico impiegato si trasforma in quel frammento espressivo utile a raccontare la transitorietà dell’opera al pari di ogni altra forma vivente.
+                    È come se Michele Bruna volesse sottolineare l’alchimia ‘neghentropica’ nel divenire delle cose. Si tratta di quel gioco di forze che, contrariamente all’ entropia nel suo moto a disperdere, tende invece ad accorpare, unire e amalgamare.
+                    La costante interrogazione dell’arte e dei suoi mezzi porta dunque Michele Bruna a considerare l’arte come mezzo e al tempo stesso fine.
+                </p>
+
+                <h4>PROGETTI</h4>
+
+                <h5>2021</h5>
+                LUCCA BIENNALE OFF, International exhibition of paper art, Lucca.<br>
+                TERRE E TRAME DI MONGIA, Residenza d’arte, Antica sede della confraternita di Santa Caterina, Lisio (Cuneo).
+
+                <h5>2020</h5>
+                VENTI PER VENTI, collezione permanente di arte contemporanea, Rittana (Cuneo).
+
+                <h5>2019</h5>
+                SPECTACULUM PROSEQUITUR, mostra antologica di Claudio Berlia, complesso monumentale di S.Francesco, Cuneo.
+
+                <h5>2018</h5>
+                DORA, Donatello Residenza d'Arte, Cuneo.<br>
+                Fogli d’Arte II, Officina delle Arti, Cuneo.<br>
+                Artisti in Asta per l'Etiopia, Beertola, Cuneo.
+
+                <h5>2017</h5>
+                GEOGRAFIE EMOZIONALI, mostra personale da Beertola, Cuneo.<br>
+                Fogli d’Arte, Officina delle Arti, Cuneo.
+
+                <h5>2016</h5>
+                ACCATELIER, performance in p.zza Bottesini, Torino.<br>
+                Arte in Piazza, performance in p.zza Boves, Cuneo.<br>
+                Contaminazioni Creative, laboratorio artistico e mostra al forte di Vinadio, (CN).<br>
+                Giovani Granda Incisori, Officina delle Arti, Cuneo.
+
+                <h5>2015</h5>
+                TRANSALP, percorsi di arte e cultura alpina tra le valli Grana e Stura, ecomuseo di Pontebernardo (CN), ecomuseo terre del castelmagno di S.Pietro di Monterosso Grana (CN), palazzo Bertello di Borgo S.Dalmazzo (CN), filatoio di Caraglio (CN).
+
+                <h5>2014</h5>
+                ARTISSIMA, internazionale d'arte contemporanea, Oval - Lingotto Fiere, Torino.<br>
+                BRERA/RIVOLI 59, rue de Rivoli 59, Parigi.<br>
+                ZOOART, giardini Fresia, Cuneo.<br>
+                Transizioni arte poesia. Contaminazioni reciproche, casa delle culture del mondo, Milano<br>
+                Transizioni arte poesia,Biblioteca Valvassori Peroni, Milano.
+
+                <h5>2013</h5>
+                RES NOVA, foyer del teatro Verdi, Castel San Giovanni (PC).<br>
+                Asta di beneficienza organizzata dall’associazione “Le Belle Arti”, spazi di arte passante, Milano.<br>
+                BRERART, il laboratorio dell’arte futura, curata dal prof. Claudio Cerritelli, ex chiesa di San Carpoforo,Milano.<br>
+                END IN NATION, Officine Creative Ansaldo, Milano.<br>
+                Concorso “MENO TRENTA”, Officine Creative Ansaldo, Milano.<br>
+                Concorso di pittura “Paolina Brugnatelli”, ex chiesa di San Carpoforo, Milano.<br>
+                Workshop “carte agresti”, azienda vitivinicola di Torre Fornello, Fornello (Piacenza).
+
+                <h5>2012</h5>
+                SALON PRIMO, organizzato dall’Accademia di Brera, ex chiesa di San Carpoforo, Milano.
+            </div>
+        </div>
+    </div>
+
+    <script src='js/app.js?v=1'></script>
+</body>
+</html>
