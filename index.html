@@ -33,11 +33,13 @@
                 <img src="img/firma.png" alt="Michele Bruna">
             </div>
             <div class="column-social">
-                <a onclick="BRUNA.showWork('bio', 'exhibition');">Bio</a> /
+                <a onclick="BRUNA.view('bio');">Bio</a> /
                 <a href="https://www.facebook.com/MicheleBrunaArtista/">Facebook</a> /
                 <a href="https://www.instagram.com/michele_bruna_artista/">Instagram</a> /
                 <a href="tel:+393335921411">Tel</a> /
                 <a href="mailto:info@michelebruna.com">Email</a>
+                <br><br>
+                &copy; <span id="year"></span>
                 <!--<img src="img/icons/facebook.svg" alt="">
                 <img src="img/icons/instagram.svg" alt="">
                 <img src="img/icons/whatsapp.svg" alt="">
@@ -47,7 +49,7 @@
             </div>
         </div>
         <div class="column-works">
-            <div class="column column--work" onclick="BRUNA.showWork('ortus-obitus');">
+            <div class="column column--work" onclick="BRUNA.view('ortus-obitus');">
                 <div class="column-bkg">
                     <div class="column-img" style="background-image: url(img/works/ortus-obitus/cover.jpg);"></div>
                 </div>
@@ -57,7 +59,7 @@
                     <img src="img/icons/arrow-right.svg" alt="">
                 </div>
             </div>
-            <div class="column column--work" onclick="BRUNA.showWork('f-rammenti');">
+            <div class="column column--work" onclick="BRUNA.view('f-rammenti');">
                 <div class="column-bkg">
                     <div class="column-img" style="background-image: url(img/works/f-rammenti/cover-old.jpg); background-position: center right;"></div>
                 </div>
@@ -67,7 +69,7 @@
                     <img src="img/icons/arrow-right.svg" alt="">
                 </div>
             </div>
-            <div class="column column--work"onclick="BRUNA.showWork('s-carti', 'exhibition');">
+            <div class="column column--work"onclick="BRUNA.view('s-carti');">
                 <div class="column-bkg">
                     <div class="column-img" style="background-image: url(img/works/s-carti/cover.jpg);"></div>
                 </div>
@@ -83,7 +85,7 @@
 
     <div id="ortus-obitus" class="work" data-background-color="#f6efdf" data-color="#655445" hidden>
         <div class="work-data">
-            <div class="work-close" onclick="BRUNA.closeWork()">✕</div>
+            <div class="work-close" onclick="BRUNA.view('/')">✕</div>
             <div class="work-title">Ortus obitus</div>
             <div class="switch">
                 <div data-switch="method" class="selected" onclick="BRUNA.scrollTo(BRUNA.METHOD);">method</div>
@@ -120,7 +122,7 @@
 
     <div id="f-rammenti" class="work" data-background-color="#ececec" data-color="#424047" hidden>
         <div class="work-data">
-            <div class="work-close" onclick="BRUNA.closeWork()">✕</div>
+            <div class="work-close" onclick="BRUNA.view('/')">✕</div>
             <div class="work-title">f-rammenti</div>
             <div class="switch">
                 <div data-switch="method" class="selected" onclick="BRUNA.scrollTo(BRUNA.METHOD);">method</div>
@@ -162,9 +164,9 @@
         </div>
     </div>
 
-    <div id="s-carti" class="work" data-background-color="#f4fafa" data-color="#3c5c58" hidden>
+    <div id="s-carti" class="work" data-background-color="#f4fafa" data-color="#3c5c58" data-is-exhibition="true" hidden>
         <div class="work-data">
-            <div class="work-close" onclick="BRUNA.closeWork()">✕</div>
+            <div class="work-close" onclick="BRUNA.view('/')">✕</div>
             <div class="work-title">S-carti</div>
             <div class="work-subtitle"></div>
             <div class="work-description">
@@ -190,9 +192,9 @@
         </div>
     </div>
 
-    <div id="bio" class="work" data-background-color="#F4F1DE" data-color="#3d405b" hidden>
+    <div id="bio" class="work" data-background-color="#F4F1DE" data-color="#3d405b" data-is-exhibition="true" hidden>
         <div class="work-data">
-            <div class="work-close" onclick="BRUNA.closeWork()">✕</div>
+            <div class="work-close" onclick="BRUNA.view('/')">✕</div>
             <div class="work-title">Biografia</div>
             <div class="work-subtitle"></div>
             <div class="work-description">

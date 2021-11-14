@@ -4,11 +4,34 @@ var BRUNA = (function() {
         EXHIBITION: 'exhibition'
     };
 
-    bruna.showWork = function(workId, view = BRUNA.METHOD) {
+    bruna.showWork = function(workId) {
+        let $body = document.querySelector('body');
+
+        // Se non ho passato un id vuol dire che devo chiudere
+        if(!workId) {
+            // Tolgo l'overflow:hidden al body
+            $body.classList.remove('o-hidden');
+
+            let $work = document.querySelector('.work.selected');
+            if($work) {
+                $work.classList.remove('selected');
+
+                let $scroller = $work.querySelector('.work-gallery');
+                $scroller.removeEventListener('scroll', onScroll);
+            }
+            return;
+        }
+
+        // Aggiungo l'overflow:hidden al body per evitare che interferisca con lo scroll del lavoro
+        $body.classList.add('o-hidden');
+
         let $work = document.querySelector(`#${workId}`);
         $work.classList.add('selected');
 
-        if(view === BRUNA.EXHIBITION) {
+
+
+        let isExhibition = $work.getAttribute('data-is-exhibition');
+        if(isExhibition) {
             $work.classList.add('is-exhibition');
         }
 
@@ -20,8 +43,10 @@ var BRUNA = (function() {
         let $gallery = $work.querySelector('.gallery');
         let $workArrowDown = $work.querySelector('.work-arrow-down');
 
-        const scroller = $work.querySelector('.work-gallery');
-        scroller.addEventListener('scroll', event => {
+        let $scroller = $work.querySelector('.work-gallery');
+        $scroller.addEventListener('scroll', onScroll);
+
+        function onScroll() {
             let scrollTop =  $work.querySelector('.work-gallery').scrollTop;
             let offsetTop = ($separator ? $separator.offsetTop : 0);
 
@@ -39,18 +64,12 @@ var BRUNA = (function() {
                         $switchMethod.classList.remove('selected');
                     }
                 } else {
-                    console.log(scrollTop, offsetTop);
                     $work.classList.remove('is-exhibition');
 
                     let $switchExhibition = $work.querySelector('[data-switch=exhibition]');
                     $switchExhibition.classList.remove('selected');
                     let $switchMethod = $work.querySelector('[data-switch=method]');
                     $switchMethod.classList.add('selected');
-
-
-                    /*if( window.innerHeight > ) {
-
-                    }*/
                 }
             }
 
@@ -60,51 +79,7 @@ var BRUNA = (function() {
             } else {
                 $workArrowDown.classList.remove('is-bottom');
             }
-        });
-    }
-    bruna.closeWork = function() {
-        let $work = document.querySelector('.work.selected')
-        $work.classList.remove('selected');
-    }
-    bruna.showMethod = function() {
-
-
-        let $method = $current.querySelector(`.gallery-method`);
-        let $items = $current.querySelector(`.gallery-exhibition`);
-        //$method.removeAttribute('hidden');
-        //$items.setAttribute('hidden', '');
-
-        /*let $gallery = $current.querySelector('.work-gallery');
-        $gallery.scroll({
-            top: 0,
-            behavior: 'smooth'
-          });*/
-
-        let $switchExhibition = $current.querySelector('[data-switch=exhibition]');
-        $switchExhibition.classList.remove('selected');
-        let $switchMethod = $current.querySelector('[data-switch=method]');
-        $switchMethod.classList.add('selected');
-    }
-
-    bruna.showExhibition = function() {
-        let $current = document.querySelector('.work.selected');
-
-
-        let $method = $current.querySelector(`.gallery-method`);
-        let $items = $current.querySelector(`.gallery-exhibition`);
-        //$items.removeAttribute('hidden');
-        //$method.setAttribute('hidden', '');
-
-        let $gallery = $current.querySelector('.work-gallery');
-        //$gallery.scroll({
-        //    top: 0,
-        //    behavior: 'smooth'
-        //  });
-
-        let $switchExhibition = $current.querySelector('[data-switch=exhibition]');
-        $switchExhibition.classList.add('selected');
-        let $switchMethod = $current.querySelector('[data-switch=method]');
-        $switchMethod.classList.remove('selected');
+        }
     }
 
     bruna.scrollTo = function(target) {
@@ -146,6 +121,27 @@ var BRUNA = (function() {
         for (const $work of $works) {
             $work.removeAttribute('hidden');
         }
+
+        BRUNA.setYear();
+
+        window.addEventListener('popstate', (event) => {
+            BRUNA.view();
+        });
+        BRUNA.view();
+    }
+
+    bruna.setYear = function() {
+        document.getElementById('year').innerHTML = new Date().getFullYear();
+    }
+
+    bruna.view = function(viewId = null) {
+        if (viewId) {
+            history.pushState({}, viewId, (viewId !== '/' ? '?' + viewId : '/'));
+        } else {
+            viewId = window.location.search.substring(1);
+        }
+
+        BRUNA.showWork((viewId === '/' ? null : viewId));
     }
 
     return bruna;
