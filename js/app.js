@@ -22,13 +22,14 @@ var BRUNA = (function() {
             return;
         }
 
-        // Aggiungo l'overflow:hidden al body per evitare che interferisca con lo scroll del lavoro
-        $body.classList.add('o-hidden');
-
         let $work = document.querySelector(`#${workId}`);
+        if(!$work) {
+            return;
+        }
         $work.classList.add('selected');
 
-
+        // Aggiungo l'overflow:hidden al body per evitare che interferisca con lo scroll del lavoro
+        $body.classList.add('o-hidden');
 
         let isExhibition = $work.getAttribute('data-is-exhibition');
         if(isExhibition) {
@@ -138,7 +139,15 @@ var BRUNA = (function() {
         if (viewId) {
             history.pushState({}, viewId, (viewId !== '/' ? '?' + viewId : '/'));
         } else {
-            viewId = window.location.search.substring(1);
+            const urlParams = new URLSearchParams(window.location.search);
+            let $workList = document.querySelectorAll('.work');
+            for (const $work of $workList) {
+                if(urlParams.has($work.id)) {
+                    viewId = $work.id;
+                }
+            }
+
+            //viewId = window.location.search.substring(1);
         }
 
         BRUNA.showWork((viewId === '/' ? null : viewId));
