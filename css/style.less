@@ -33,19 +33,20 @@ body{
         position: absolute;
         top: 0;
         left: 0;
-        height: 150%;
+        height: 100%;
         width: 100%;
         z-index: 1;
         background-color: transparent;
         transition: background-color 1.6s;
         pointer-events: none;
+        will-change: background-color;
     }
 
     &.o-hidden {
         overflow: hidden;
 
         &:after {
-
+            height: 150%;
             background-color: #F4F1DE;
 
         }
