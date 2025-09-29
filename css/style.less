@@ -51,6 +51,17 @@ a {
 
 .o-hidden {
     overflow: hidden;
+    background-color: var(--color);
+
+    .column-container:after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        background-color: var(--color);
+    }
 }
 
 [hidden] {
